@@ -29,7 +29,7 @@ namespace InternShipPipeline.Controllers
                     return RedirectToAction("Clock", "Home");
                 }
             }
-            return RedirectToAction("Privacy", "Home"); 
+            return Content("Username and/or password are incorrect"); //RedirectToAction("Privacy", "Home"); 
         }
 
         /*public class User
