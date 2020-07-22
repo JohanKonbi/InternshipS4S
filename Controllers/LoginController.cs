@@ -26,18 +26,19 @@ namespace InternShipPipeline.Controllers
             {
                 if (line == username + " " + password)
                 {
+
                     return RedirectToAction("Clock", "Home");
                 }
             }
             return Content("Username and/or password are incorrect"); //RedirectToAction("Privacy", "Home"); 
         }
 
-        /*public class User
+        public class User
         {
             public string Username { get; set; }
             public string Password { get; set; }
         }
-
+        /*
         public class CheckLogin
         {
             public void ToFile()

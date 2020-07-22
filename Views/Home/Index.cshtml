@@ -1,20 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
 }
 @model string
 
 <html>
 <body>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome, please login</h1>
-    <br><br>
-    
+    <div class="text-center">
+        <h1 class="display-4">Welcome, please login</h1>
+        <br><br>
+
         <form action="@Url.Action("Check", "Login")" method="post">
             <!--Text file?-->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
             <br><br>
+
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password">
@@ -24,11 +26,11 @@
             @Model
         </form>
 
-    <br>
-    <p>Login if you want to clock in or clock out.</p>
-    <!--Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a> -->
+        <br>
+        <p>Login if you want to clock in or clock out.</p>
+        <!--Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a> -->
 
-</div>
+    </div>
 
 </body>
 </html>
