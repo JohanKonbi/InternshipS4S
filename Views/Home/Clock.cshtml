@@ -5,7 +5,11 @@
 
 <html>
 <head>
-
+    <script>
+        function myFunction() {
+            document.getElementById("clockout").removeAttribute("disabled");
+        }
+    </script>
 </head>
 <body>
     <style>
@@ -33,8 +37,8 @@
         <br /><br />
 
         <div id="myDIV">
-            <button id="clockin" class="btn">Clock in</button>
-            <button id="clockout" class="btn">Clock out</button>
+            <button id="clockin" class="btn" onclick="myFunction()">Clock in</button>
+            <button id="clockout" class="btn" disabled>Clock out</button>
         </div>
 
     </div>
