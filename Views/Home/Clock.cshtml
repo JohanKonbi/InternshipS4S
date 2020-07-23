@@ -1,23 +1,42 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Clock in or out";
     ViewData["Username"] = InternShipPipeline.Controllers.HomeController.username;
 }
-<h1>@ViewData["Title"]</h1>
-<br />
-<p>@ViewData["Username"]</p>
-<br />
-<form action="@Url.Action("Check", "Login")" method="post">
-    <!--Text file?-->
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
-    <br><br>
 
+<html>
+<head>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-    <br><br>
+</head>
+<body>
+    <style>
+        /* Style the buttons */
+        .btn {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            margin: 50px;
+            background-color: lightgrey;
+            cursor: pointer;
+        }
 
-    <input type="submit" id="submit" name="submit" value="Log in">
-    @Model
-</form>
-<p></p>
+            /* Style the active class (and buttons on mouse-over) */
+            .active, .btn:hover {
+                background-color: darkgrey;
+                color: white;
+            }
+    </style>
+
+    <div>
+        <!--<h1>@ViewData["Title"]</h1>
+        <br />-->
+        <h1>Welcome, @ViewData["Username"]</h1>
+        <br /><br />
+
+        <div id="myDIV">
+            <button id="clockin" class="btn">Clock in</button>
+            <button id="clockout" class="btn">Clock out</button>
+        </div>
+
+    </div>
+</body>
+</html>
