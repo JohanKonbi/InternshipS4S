@@ -12,4 +12,8 @@
     <None Remove="Testing\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.21" />
+  </ItemGroup>
+
 </Project>

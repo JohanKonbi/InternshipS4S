@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 using Microsoft.AspNetCore.Mvc;
+using MySqlX.XDevAPI;
 
 namespace InternShipPipeline.Controllers
 {
@@ -26,7 +27,7 @@ namespace InternShipPipeline.Controllers
             {
                 if (line == username + " " + password)
                 {
-
+                    HomeController.username = username;
                     return RedirectToAction("Clock", "Home");
                 }
             }
