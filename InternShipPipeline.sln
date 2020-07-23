@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternShipPipeline", "InternShipPipeline.csproj", "{06F3187C-62D5-4A2E-A569-656BDC9B16DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{A65FB089-BC30-4692-A987-DEFDA235E9BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.csproj", "{A65FB089-BC30-4692-A987-DEFDA235E9BC}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "InternShipDB", "InternShipDB\InternShipDB.sqlproj", "{0D0BD3C1-253B-4701-9412-44D416E1FD3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{A65FB089-BC30-4692-A987-DEFDA235E9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A65FB089-BC30-4692-A987-DEFDA235E9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A65FB089-BC30-4692-A987-DEFDA235E9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0BD3C1-253B-4701-9412-44D416E1FD3D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
