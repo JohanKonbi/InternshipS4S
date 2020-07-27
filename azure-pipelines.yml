@@ -35,10 +35,7 @@ steps:
 #    platform: '$(buildPlatform)'
 #    configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+
     publishLocation: 'Container'
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -46,4 +43,8 @@ steps:
     azureSubscription: 'Free Trial(355a2ba0-c66c-495e-a940-c93b983bb897)'
     appType: 'webApp'
     WebAppName: 'internships4s'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)\drop\InternShipPipeline'
+    packageForLinux: '$(System.DefaultWorkingDirectory)\**\*.zip'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
