@@ -46,4 +46,4 @@ steps:
     azureSubscription: 'Free Trial(355a2ba0-c66c-495e-a940-c93b983bb897)'
     appType: 'webApp'
     WebAppName: 'internships4s'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/drop/InternShipPipeline'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)\drop\InternShipPipeline'
