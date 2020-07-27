@@ -38,12 +38,20 @@ steps:
 
     publishLocation: 'Container'
 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(355a2ba0-c66c-495e-a940-c93b983bb897)'
-    appType: 'webApp'
-    WebAppName: 'internships4s'
-    packageForLinux: '$(System.DefaultWorkingDirectory)\**\*.zip'
-
 - task: PublishBuildArtifacts@1
+
+#- task: AzureRmWebAppDeployment@4
+#  inputs:
+#    ConnectionType: 'AzureRM'
+#    azureSubscription: 'Free Trial(355a2ba0-c66c-495e-a940-c93b983bb897)'
+#    appType: 'webApp'
+#    WebAppName: 'internships4s'
+#    packageForLinux: '$(System.DefaultWorkingDirectory)\**\*.zip'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (355a2ba0-c66c-495e-a940-c93b983bb897)'
+    appType: 'webApp'
+    appName: 'internships4s'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
