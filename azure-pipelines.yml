@@ -38,10 +38,6 @@ steps:
 
     publishLocation: 'Container'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
-    ArtifactName: 'drop'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -49,3 +45,5 @@ steps:
     appType: 'webApp'
     WebAppName: 'internships4s'
     packageForLinux: '$(System.DefaultWorkingDirectory)\**\*.zip'
+
+- task: PublishBuildArtifacts@1
