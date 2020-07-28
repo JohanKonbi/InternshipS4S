@@ -22,7 +22,7 @@ namespace InternShipPipeline.Controllers
             var username = Request.Form["username"];
             var password = Request.Form["password"];
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"D:\home\site\Views\Login\LoginData.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"D:\home\site\wwwroot\LoginData.txt");
             while ((line = file.ReadLine()) != null)
             {
                 if (line == username + " " + password)
