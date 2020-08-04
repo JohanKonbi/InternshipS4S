@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json.schema.org/draft-handrews-json-schema*-02",
+  "title": "Clock",
+  "type": "object",
+  "required": [ "username", "password", "currentTime" ],
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 50
+    },
+    "currentTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Comment":  "Use this schema to check if you can clock in or out."
+  }
+}

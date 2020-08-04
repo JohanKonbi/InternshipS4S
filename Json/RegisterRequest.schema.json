@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json.schema.org/draft-handrews-json-schema*-02",
+  "title": "Register",
+  "type": "object",
+  "required": [ "pid", "name", "username", "password", "email" ],
+  "properties": {
+    "pid": {
+      "type": "number",
+      "minimum": 1000,
+      "maximum": 9999
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z]{2,20}+([a-z]{2,20}){1,5}$",
+      "minLength": 5,
+      "maxLength": 50
+    },
+    "username": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 50
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "Comment":  "Use this schema to check if your register credentials are valid, before checking the database if the values already exist"
+  }
+}

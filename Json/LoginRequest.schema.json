@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schema.org/draft-handrews-json-schema*-02",
+  "title": "Login",
+  "type": "object",
+  "required": ["username", "password"],
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50
+    },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 50
+    },
+    "Comment":  "Used to check if login credentials are all valid"
+  }
+}
