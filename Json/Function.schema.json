@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schema.org/draft-handrews-json-schema*-02",
+  "title": "ENTER MESSAGE HERE",
+  "type": "object",
+  "required": [ "req1" ],
+  "properties": {
+    "req1": {
+      "type": "string"
+    },
+    "Comment":  "DIT IS EEN COMMENT VOOR DEZE FILE"
+  }
+}
