@@ -7,6 +7,7 @@ namespace InternShipPipeline.Controllers
 {
     public class AanmeldenController : Controller
     {
+        public static string responseMessage;
         public IActionResult AanMelden()
         {
             return View();
@@ -14,7 +15,8 @@ namespace InternShipPipeline.Controllers
 
         public ActionResult AanmeldFunctie()
         {
-            string n = Request.Form["username"];
+            string n = Request.Form["name"];
+            string u = Request.Form["username"];
             string p = Request.Form["password"];
             string i = Request.Form["PID"];
             string e = Request.Form["email"];
@@ -29,6 +31,7 @@ namespace InternShipPipeline.Controllers
             {
                 string json = new JavaScriptSerializer().Serialize(new 
                     { 
+                        username = u,
                         name = n,
                         password = p,
                         id = i,
@@ -42,8 +45,10 @@ namespace InternShipPipeline.Controllers
             var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             var streamReader = new StreamReader(httpResponse.GetResponseStream());
             var result = streamReader.ReadToEnd();
+
+            responseMessage = result;
             
-            return Content(result);
+            return RedirectToAction("AanMelden", "Home");
         }
     }
 }

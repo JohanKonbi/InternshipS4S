@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "AanMelden";
+    ViewData["ResponseMessage"] = InternShipPipeline.Controllers.AanmeldenController.responseMessage;
 }
-@model string
 
 <h1>AanMelden</h1>
 
@@ -34,7 +34,9 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            @Model
+            <div class="form-group">
+                <label for="response">@ViewData["ResponseMessage"]</label>
+            </div>
         </form>
     </div>
 </div>

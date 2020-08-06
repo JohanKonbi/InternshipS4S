@@ -1,8 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-
+    ViewData["ReponseMessage"] = InternShipPipeline.Controllers.LoginController.
 }
-@model string
 
 <html>
 <body>
@@ -23,7 +22,7 @@
             <br><br>
 
             <input type="submit" id="submit" name="submit" value="Log in">
-            @Model
+            <label for=response>@ViewData["ResponseMessage"]</label>
         </form>
 
         <br>
