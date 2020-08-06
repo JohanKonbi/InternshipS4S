@@ -20,16 +20,16 @@ namespace InternShipPipeline.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Inloggen()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Werkgever()
         {
             return View();
         }
-        public IActionResult Clock()
+        public IActionResult Werknemer()
         {
             return View();
         }

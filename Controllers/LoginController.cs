@@ -15,12 +15,12 @@ namespace InternShipPipeline.Controllers
     public class LoginController : Controller
     {
         public static string responseMessage;
-        public IActionResult Index()
+        public IActionResult Inloggen()
         {
             return View();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult Check()
         {
             string line;
@@ -37,12 +37,13 @@ namespace InternShipPipeline.Controllers
                 }
             }
             return Content("Username and/or password are incorrect"); //RedirectToAction("Privacy", "Home"); 
-        }
+        }*/
 
         public ActionResult LoginFunctie()
-        {
+        { 
             string u = Request.Form["username"];
             string p = Request.Form["password"];
+            HomeController.username = u;
 
             //post request
             string url = "https://azurefunctioninterships4s.azurewebsites.net/api/Inloggen";
@@ -66,31 +67,11 @@ namespace InternShipPipeline.Controllers
             var streamReader = new StreamReader(httpResponse.GetResponseStream());
             var result = streamReader.ReadToEnd();
 
+            //check response - redirect or errormessage
+
             responseMessage = result;
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Werkgever", "Home");
         }
-
-        /*public class User
-        {
-            public string Username { get; set; }
-            public string Password { get; set; }
-        }
-
-        public class CheckLogin
-        {
-            public void ToFile()
-            {
-                var userlist = new List<User>();
-                userlist.Add(new User { Username = "amy", Password = "1234" });
-
-                System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\LoginData.tx");
-
-                foreach (User s in userlist)
-                {
-                    file.WriteLine(s.Username + " " + s.Password);
-                }
-            }
-        }*/
     }
 }

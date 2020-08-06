@@ -46,6 +46,8 @@ namespace InternShipPipeline.Controllers
             var streamReader = new StreamReader(httpResponse.GetResponseStream());
             var result = streamReader.ReadToEnd();
 
+            //check response - redirect or errormessage
+
             responseMessage = result;
             
             return RedirectToAction("AanMelden", "Home");

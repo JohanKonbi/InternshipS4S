@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    ViewData["ReponseMessage"] = InternShipPipeline.Controllers.LoginController.
+    ViewData["ReponseMessage"] = InternShipPipeline.Controllers.LoginController.responseMessage;
 }
 
 <html>
@@ -10,7 +10,7 @@
         <h1 class="display-4">Please login</h1>
         <br><br>
 
-        <form action="@Url.Action("Check", "Login")" method="post">
+        <form action="@Url.Action("LoginFunctie", "Login")" method="post">
             <!--Text file?-->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" minlength="5" maxlength="50" title="Geen geldige username" required class="form-control">
@@ -24,11 +24,6 @@
             <input type="submit" id="submit" name="submit" value="Log in">
             <label for=response>@ViewData["ResponseMessage"]</label>
         </form>
-
-        <br>
-        <p>Login if you want to clock in or clock out.</p>
-        <!--Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a> -->
-
     </div>
 
 </body>
