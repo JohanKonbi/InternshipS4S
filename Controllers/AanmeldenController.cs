@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Net;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nancy.Json;
 using System.IO;
+using System.Net;
 
 namespace InternShipPipeline.Controllers
 {
@@ -18,6 +14,11 @@ namespace InternShipPipeline.Controllers
 
         public ActionResult AanmeldFunctie()
         {
+            string n = Request.Form["username"];
+            string p = Request.Form["password"];
+            string i = Request.Form["PID"];
+            string e = Request.Form["email"];
+
             //post request
             string url = "https://azurefunctioninterships4s.azurewebsites.net/api/AanMelden";
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -26,7 +27,14 @@ namespace InternShipPipeline.Controllers
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                string json = "{\"name\":\"test\"}";
+                string json = new JavaScriptSerializer().Serialize(new 
+                    { 
+                        name = n,
+                        password = p,
+                        id = i,
+                        email = e
+                    });
+
                 streamWriter.Write(json);
             }
 
