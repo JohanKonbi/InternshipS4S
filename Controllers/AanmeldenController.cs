@@ -21,13 +21,21 @@ namespace InternShipPipeline.Controllers
             string i = Request.Form["PID"];
             string e = Request.Form["email"];
 
-            //post request
+            //post request MySQL
             string url = "https://azurefunctioninterships4s.azurewebsites.net/api/AanMelden";
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
 
+            //post request Cosmos
+            /*string cosmosurl = "https://azurefunctioninterships4s.azurewebsites.net/api/AanmeldenCosmos";
+            var httpwebRequestCosmos = (HttpWebRequest)WebRequest.Create(cosmosurl);
+            httpwebRequestCosmos.ContentType = "application/json";
+            httpwebRequestCosmos.Method = "POST";*/
+
+
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            //using (var streamWriterCosmos = new StreamWriter(httpwebRequestCosmos.GetRequestStream()))
             {
                 string json = new JavaScriptSerializer().Serialize(new 
                     { 
@@ -39,17 +47,21 @@ namespace InternShipPipeline.Controllers
                     });
 
                 streamWriter.Write(json);
+                //streamWriterCosmos.Write(json);
             }
 
-            //get response
+            //get response MySQL
             var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             var streamReader = new StreamReader(httpResponse.GetResponseStream());
             var result = streamReader.ReadToEnd();
 
-            //check response - redirect or errormessage
+            //get response Cosmos
+            /*var httpResponseCosmos = (HttpWebResponse)httpwebRequestCosmos.GetResponse();
+            var streamReaderCosmos = new StreamReader(httpResponseCosmos.GetResponseStream());
+            var resultCosmos = streamReaderCosmos.ReadToEnd();*/
 
-            responseMessage = result;
-            
+            responseMessage = "MySQl response;" + result; //"Cosmos DB response" + resultCosmos
+
             return RedirectToAction("AanMelden", "Home");
         }
     }
